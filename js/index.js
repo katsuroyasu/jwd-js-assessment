@@ -40,9 +40,19 @@ window.addEventListener('DOMContentLoaded', () => {
       a: 3,
     },
     {
-      q: 'What is the capital of Australia',
+      q: 'What is the capital of Australia?',
       o: ['Sydney', 'Canberra', 'Melbourne', 'Perth'],
       a: 1,
+    },
+    {
+      q: 'Which is not the three primary colours?',
+      o: ['Red', 'Blue', 'Green', 'Yellow'],
+      a: 2,
+    },
+    {
+      q: 'What does the fox say?',
+      o: ['A-oo-oo-oo-ooo!', 'Hatee-hatee-hatee-ho!', 'Joff-tchoff-tchoffo-tchoffo-tchoff!', 'Ring-ding-ding-ding-dingeringeding!'],
+      a: 0,
     },
   ];
 
