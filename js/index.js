@@ -27,7 +27,7 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   // COUNTDOWN TIMER
-  sec = 10;
+  sec = 60;
   setInterval(time, 1000);
 
   function time() {
