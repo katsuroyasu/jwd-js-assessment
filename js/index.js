@@ -27,16 +27,17 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   // COUNTDOWN TIMER
+  sec = 10;
   setInterval(time, 1000);
 
   function time() {
-    sec = 60;
     document.getElementById("time").innerHTML= sec + ` sec(s) left`;
     sec--;
     console.log(sec)
     if (sec < 0) {
       clearInterval(time);
       alert("Time's up!");
+      calculateScore();
     }
   }
 
@@ -131,5 +132,4 @@ window.addEventListener('DOMContentLoaded', () => {
   reset.addEventListener("click", () => {
     location.reload();
   })
-
 });
