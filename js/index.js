@@ -25,6 +25,20 @@ window.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#quizBlock').style.display = 'block';
     start.style.display = 'none';
   });
+
+  // COUNTDOWN TIMER
+  setInterval(time, 1000);
+
+  function time() {
+    sec = 60;
+    document.getElementById("time").innerHTML= sec + ` sec left`;
+    sec--;
+    if (sec < 0) {
+      clearInterval(time);
+      alert("Time's up!");
+    }
+  }
+
   // quizArray QUESTIONS & ANSWERS
   // q = QUESTION, o = OPTIONS, a = CORRECT ANSWER
   // Basic ideas from https://code-boxx.com/simple-javascript-quiz/
@@ -86,15 +100,36 @@ window.addEventListener('DOMContentLoaded', () => {
 
         if (quizItem.a == i) {
           //change background color of li element here
+          liElement.style.backgroundColor = "#4be77f";
         }
 
         if (radioElement.checked) {
           // code for task 1 goes here
+          if (quizItem.a == i) {
+            score += 1;
+          }
         }
       }
     });
+    //SCORE
   };
 
   // call the displayQuiz function
   displayQuiz();
 });
+
+// SUBMIT
+const submit = document.querySelector("#btnSubmit");
+submit.addEventListener("click", () => {
+  calculateScore();
+  clearInterval(time);
+})
+
+// RESET
+const reset = document.querySelector("#btnReset");
+reset.addEventListener("click", () => {
+  location.reload();
+})
+
+// SCORE
+document.querySelector('#score').innerHTML = `Total score: ${score}`;
