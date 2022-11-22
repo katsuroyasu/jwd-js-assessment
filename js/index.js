@@ -112,6 +112,7 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     });
     //SCORE
+    document.querySelector('#score').innerHTML = `Total score: ${score}`;
   };
 
   // call the displayQuiz function
@@ -130,6 +131,3 @@ const reset = document.querySelector("#btnReset");
 reset.addEventListener("click", () => {
   location.reload();
 })
-
-// SCORE
-document.querySelector('#score').innerHTML = `Total score: ${score}`;
