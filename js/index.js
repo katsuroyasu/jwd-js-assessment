@@ -31,8 +31,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
   function time() {
     sec = 60;
-    document.getElementById("time").innerHTML= sec + ` sec left`;
+    document.getElementById("time").innerHTML= sec + ` sec(s) left`;
     sec--;
+    console.log(sec)
     if (sec < 0) {
       clearInterval(time);
       alert("Time's up!");
@@ -117,17 +118,18 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // call the displayQuiz function
   displayQuiz();
+
+  // SUBMIT
+  const submit = document.querySelector("#btnSubmit");
+  submit.addEventListener("click", () => {
+    calculateScore();
+    clearInterval(time);
+  })
+
+  // RESET
+  const reset = document.querySelector("#btnReset");
+  reset.addEventListener("click", () => {
+    location.reload();
+  })
+
 });
-
-// SUBMIT
-const submit = document.querySelector("#btnSubmit");
-submit.addEventListener("click", () => {
-  calculateScore();
-  clearInterval(time);
-})
-
-// RESET
-const reset = document.querySelector("#btnReset");
-reset.addEventListener("click", () => {
-  location.reload();
-})
